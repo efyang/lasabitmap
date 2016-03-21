@@ -4,4 +4,4 @@ name = "bitmap"
 version = "0.1.0"
 
 [dependencies]
-bitstream = "0.1.1"
+bit-vec = "0.4.3"
