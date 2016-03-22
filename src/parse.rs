@@ -1,11 +1,9 @@
-use bit_vec::*;
 use std::fs::File;
-use std::io::prelude::*;
 use node::*;
 use bitstream::*;
 
 pub fn parse() -> Vec<Vec<Node>> {
-    let mut infile = File::open("map.dat").unwrap();
+    let infile = File::open("map.dat").unwrap();
     //let mut indata = Vec::with_capacity(4800*(4800/8));
     //infile.read_to_end(&mut indata).unwrap();
     //let mut data = Vec::with_capacity(4800 + 2);
