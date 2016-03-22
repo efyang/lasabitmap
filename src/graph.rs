@@ -58,7 +58,7 @@ impl Graph {
                 let ref mut node = self.data[newcoord];
                 if !node.checked {
                     node.checked = true;
-                    if node.value != true /*eq 1*/ {
+                    if node.value == false /*eq 0*/ {
                         self.current_0_count += 1;
                         self.endpoints.push(newcoord.to_owned());
                     }
