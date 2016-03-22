@@ -5,3 +5,4 @@ version = "0.1.0"
 
 [dependencies]
 bit-vec = "0.4.3"
+bitstream = "0.1.1"

@@ -1,4 +1,5 @@
 extern crate bit_vec;
+extern crate bitstream;
 mod parse;
 mod node;
 mod coord;
