@@ -66,6 +66,10 @@ impl Graph {
             }
         }
     }
+
+    pub fn index_data(&self, c: &Coord) -> Node {
+        self.data[c].clone()
+    }
 }
 
 fn pad_graph_data(graph: &mut Vec<Vec<Node>>, pad_value: Node) {
