@@ -1,5 +1,5 @@
 use std::iter;
-
+use image::{ImageBuffer, Rgb};
 use node::Node;
 use coord::Coord;
 
@@ -49,7 +49,7 @@ impl Graph {
         let mut coords = vec![up, right];
         if coord.x != 0 {
             coords.push(left);
-        } 
+        }
         if coord.y != 0 {
             coords.push(down);
         }
@@ -58,7 +58,7 @@ impl Graph {
                 let ref mut node = self.data[newcoord];
                 if !node.checked {
                     node.checked = true;
-                    if node.value == false /*eq 0*/ {
+                    if node.value == false {
                         self.current_0_count += 1;
                         self.endpoints.push(newcoord.to_owned());
                     }
@@ -67,8 +67,8 @@ impl Graph {
         }
     }
 
-    pub fn index_data(&self, c: &Coord) -> Node {
-        self.data[c].clone()
+    pub fn generate_imagebuffer(&self) -> ImageBuffer<Rgb<u8>, Vec<u8>> {
+        ImageBuffer::from_fn(4800, 4800, |x, y| self.data[y as usize][x as usize].make_pixel())
     }
 }
 

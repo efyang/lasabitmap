@@ -1,4 +1,4 @@
-use bmp::Pixel;
+use image::Rgb;
 #[derive(Clone)]
 pub struct Node {
     pub value: bool,
@@ -13,15 +13,15 @@ impl Node {
         }
     }
 
-    pub fn make_pixel(&self) -> Pixel {
+    pub fn make_pixel(&self) -> Rgb<u8> {
         if self.value {
             // wall
-            px!(0, 0, 0)
+            Rgb([0, 0, 0])
         } else {
             if self.checked {
-                px!(0, 255, 0)
+                Rgb([0, 255, 0])
             } else {
-                px!(255, 255, 255)
+                Rgb([255, 255, 255])
             }
         }
     }
